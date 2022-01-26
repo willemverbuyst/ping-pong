@@ -54,17 +54,10 @@ Build image
 
 `docker build --tag ping-pong-roach .`
 
-Run roach
+Validate docker-compose file
 
-```
-docker run -it --rm -d \
-  --network ping-pong-net \
-  --name ping-pong-server \
-  -p 80:8080 \
-  -e PGUSER=totoro \
-  -e PGPASSWORD=mypassword \
-  -e PGHOST=db \
-  -e PGPORT=26257 \
-  -e PGDATABASE=mydb \
-  ping-pong-roach
-```
+`docker-compose config`
+
+`Add database, user and persion in roach
+
+`docker exec -it roach ./cockroach sql --insecure`
